@@ -3,7 +3,9 @@ package com.acc.rest;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -13,6 +15,7 @@ import javax.ws.rs.core.Response;
 
 import com.acc.bean.Employee;
 import com.acc.dao.EmployeeDao;
+import com.acc.json.EmployeeJSON;
  
 @Path("/employees")
 public class EmployeeService {
@@ -56,4 +59,20 @@ public class EmployeeService {
  
 	}
  
+	/**
+	 * Crear una API que inserte los datos de un employee
+	 * 1 = Created
+	 * 0 = Already exist
+	 * -1 = Errors
+	 */
+	
+	@POST @Consumes("application/json")
+	@Path("/")
+	@Produces(MediaType.APPLICATION_JSON)
+	public int insertEmployee(final EmployeeJSON employeeJson) {
+		int result = 1;
+		System.out.println("Name" + employeeJson.sysId);
+		// Insertar aquí el código para insertar los datos en la db
+		return result;
+	}
 }

@@ -28,7 +28,7 @@ public class CreateDerbyDB {
 	    Statement stmt = conn.createStatement();
 	 
 	    // drop table
-	    stmt.executeUpdate("drop table employees");
+	    //stmt.executeUpdate("drop table employees");
 	 
 	    // create table
 	    String fields = "(sysId int primary key, eId varchar(30), name varchar(30)," +
